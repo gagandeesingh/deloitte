@@ -1,0 +1,82 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_S4HANA')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_S4HANA')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_S4HANA')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zv_c_exception_cds/$metadata"><edmx:Include Namespace="ZV_C_EXCEPTION_CDS" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zv_c_exception_cds_van.v1">
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/zzlvorm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/Deactivate_ac"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/Delete_mc"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/Update_mc"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/inactive">
+				<Annotation Term="Common.Text" Path="inactive_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/zzernam">
+				<Annotation Term="Common.Text" Path="zzernam_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/zzaenam">
+				<Annotation Term="Common.Text" Path="zzaenam_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType">
+				<Annotation Term="UI.FieldGroup" Qualifier="ChAdminInformation">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed By Name"/><PropertyValue Property="Value" Path="zzaenam"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed On Date"/><PropertyValue Property="Value" Path="zzaedat"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed At Time"/><PropertyValue Property="Value" Path="zzaezet"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="CrAdminInformation">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created By Name"/><PropertyValue Property="Value" Path="zzernam"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created On Date"/><PropertyValue Property="Value" Path="zzerdat"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created At Time"/><PropertyValue Property="Value" Path="zzerzet"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Inactive"/><PropertyValue Property="Value" Path="inactive"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="exceprion_code"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="exception_descr"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Exception Text"/><PropertyValue Property="Value" Path="exception_descr"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Exception Code"/><PropertyValue Property="Value" Path="exceprion_code"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Active/Inactive"/><PropertyValue Property="Action" String="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTION_CDS_Entities/ZV_C_EXCEPTIONDeactivate"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="exceprion_code"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="exception_descr"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Inactive"/><PropertyValue Property="Criticality" Path="Criticality"/><PropertyValue Property="Value" Path="inactive"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>exceprion_code</PropertyPath>
+						<PropertyPath>exception_descr</PropertyPath>
+						<PropertyPath>zzernam</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

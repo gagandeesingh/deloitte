@@ -1,0 +1,85 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZV_C_EXCEPTION_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZV_B_USER_DTLSType" sap:label="User Details" sap:content-version="1">
+				<Key><PropertyRef Name="bname"/></Key><Property Name="bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User"
+					sap:quickinfo="User Name in User Master Record"/><Property Name="ename" Type="Edm.String" MaxLength="80" sap:label="Creator Name" sap:quickinfo="Name of person who created this activity"/></EntityType>
+			<EntityType Name="ZV_C_EXCEPTIONType" sap:label="Maintain Exception Master" sap:content-version="1">
+				<Key><PropertyRef Name="exceprion_code"/></Key><Property Name="Deactivate_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="exceprion_code" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Code"
+					sap:quickinfo="Exception Code Info"/><Property Name="zzaenam_Text" Type="Edm.String" MaxLength="80" sap:label="Creator Name"
+					sap:quickinfo="Name of person who created this activity" sap:creatable="false" sap:updatable="false"/><Property Name="zzaedat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Changed On Date"
+					sap:creatable="false" sap:updatable="false"/><Property Name="zzaezet" Type="Edm.Time" Precision="0" sap:label="Created At" sap:quickinfo="Created At Time" sap:creatable="false"
+					sap:updatable="false"/><Property Name="zzlvorm" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Deletion Indicator" sap:creatable="false"
+					sap:updatable="false"/><Property Name="Criticality" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative"/><Property Name="exception_descr" Type="Edm.String" MaxLength="150" sap:label="Text" sap:quickinfo="Exception Text Info"/><Property Name="inactive" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:text="inactive_Text" sap:label="Inactive"
+					sap:quickinfo="Inactive Flag"/><Property Name="inactive_Text" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"
+					sap:creatable="false" sap:updatable="false"/><Property Name="zzernam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="zzernam_Text" sap:label="Created By"
+					sap:quickinfo="Created By Name" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/><Property Name="zzernam_Text" Type="Edm.String" MaxLength="80" sap:label="Creator Name"
+					sap:quickinfo="Name of person who created this activity" sap:creatable="false" sap:updatable="false"/><Property Name="zzerdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:quickinfo="Created On Date"
+					sap:creatable="false" sap:updatable="false"/><Property Name="zzerzet" Type="Edm.Time" Precision="0" sap:label="Created At" sap:quickinfo="Created At Time" sap:creatable="false"
+					sap:updatable="false"/><Property Name="zzaenam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="zzaenam_Text" sap:label="Changed By"
+					sap:quickinfo="Changed By Name" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/><NavigationProperty Name="to_cbx" Relationship="ZV_C_EXCEPTION_CDS.assoc_505003B0AD1FC9B870FB0D2F3471C196"
+					FromRole="FromRole_assoc_505003B0AD1FC9B870FB0D2F3471C196" ToRole="ToRole_assoc_505003B0AD1FC9B870FB0D2F3471C196"/><NavigationProperty Name="to_chnam" Relationship="ZV_C_EXCEPTION_CDS.assoc_F4AD469137D5B41063592202BFF764E0"
+					FromRole="FromRole_assoc_F4AD469137D5B41063592202BFF764E0" ToRole="ToRole_assoc_F4AD469137D5B41063592202BFF764E0"/><NavigationProperty Name="to_crnam" Relationship="ZV_C_EXCEPTION_CDS.assoc_F051760A35190A2B583F4DB0C87D957D"
+					FromRole="FromRole_assoc_F051760A35190A2B583F4DB0C87D957D" ToRole="ToRole_assoc_F051760A35190A2B583F4DB0C87D957D"/></EntityType>
+			<EntityType Name="ZV_GET_CHECKBOXType" sap:label="Get Checkbox Values" sap:content-version="1">
+				<Key><PropertyRef Name="domkey"/></Key><Property Name="domkey" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:text="ddtext"
+					sap:label="Check Box" sap:quickinfo="Check Box - Key"/><Property Name="ddlanguage" Type="Edm.String" MaxLength="2" sap:label="Lang." sap:quickinfo="Language Key"/><Property Name="ddtext" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<Association Name="assoc_F4AD469137D5B41063592202BFF764E0" sap:content-version="1"><End Type="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" Multiplicity="1" Role="FromRole_assoc_F4AD469137D5B41063592202BFF764E0"/><End Type="ZV_C_EXCEPTION_CDS.ZV_B_USER_DTLSType" Multiplicity="0..1" Role="ToRole_assoc_F4AD469137D5B41063592202BFF764E0"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_F4AD469137D5B41063592202BFF764E0"><PropertyRef Name="bname"/></Principal>
+					<Dependent Role="FromRole_assoc_F4AD469137D5B41063592202BFF764E0"><PropertyRef Name="zzaenam"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_F051760A35190A2B583F4DB0C87D957D" sap:content-version="1"><End Type="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" Multiplicity="1" Role="FromRole_assoc_F051760A35190A2B583F4DB0C87D957D"/><End Type="ZV_C_EXCEPTION_CDS.ZV_B_USER_DTLSType" Multiplicity="0..1" Role="ToRole_assoc_F051760A35190A2B583F4DB0C87D957D"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_F051760A35190A2B583F4DB0C87D957D"><PropertyRef Name="bname"/></Principal>
+					<Dependent Role="FromRole_assoc_F051760A35190A2B583F4DB0C87D957D"><PropertyRef Name="zzernam"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_505003B0AD1FC9B870FB0D2F3471C196" sap:content-version="1"><End Type="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" Multiplicity="1" Role="FromRole_assoc_505003B0AD1FC9B870FB0D2F3471C196"/><End Type="ZV_C_EXCEPTION_CDS.ZV_GET_CHECKBOXType" Multiplicity="0..1" Role="ToRole_assoc_505003B0AD1FC9B870FB0D2F3471C196"/></Association>
+			<EntityContainer Name="ZV_C_EXCEPTION_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZV_B_USER_DTLS" EntityType="ZV_C_EXCEPTION_CDS.ZV_B_USER_DTLSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZV_C_EXCEPTION" EntityType="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" sap:content-version="1" sap:deletable-path="Delete_mc"
+				sap:updatable-path="Update_mc"/><EntitySet Name="ZV_GET_CHECKBOX" EntityType="ZV_C_EXCEPTION_CDS.ZV_GET_CHECKBOXType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_505003B0AD1FC9B870FB0D2F3471C196" Association="ZV_C_EXCEPTION_CDS.assoc_505003B0AD1FC9B870FB0D2F3471C196"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZV_C_EXCEPTION" Role="FromRole_assoc_505003B0AD1FC9B870FB0D2F3471C196"/><End EntitySet="ZV_GET_CHECKBOX" Role="ToRole_assoc_505003B0AD1FC9B870FB0D2F3471C196"/></AssociationSet>
+				<AssociationSet Name="assoc_F051760A35190A2B583F4DB0C87D957D" Association="ZV_C_EXCEPTION_CDS.assoc_F051760A35190A2B583F4DB0C87D957D"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZV_C_EXCEPTION" Role="FromRole_assoc_F051760A35190A2B583F4DB0C87D957D"/><End EntitySet="ZV_B_USER_DTLS" Role="ToRole_assoc_F051760A35190A2B583F4DB0C87D957D"/></AssociationSet>
+				<AssociationSet Name="assoc_F4AD469137D5B41063592202BFF764E0" Association="ZV_C_EXCEPTION_CDS.assoc_F4AD469137D5B41063592202BFF764E0"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZV_C_EXCEPTION" Role="FromRole_assoc_F4AD469137D5B41063592202BFF764E0"/><End EntitySet="ZV_B_USER_DTLS" Role="ToRole_assoc_F4AD469137D5B41063592202BFF764E0"/></AssociationSet>
+				<FunctionImport Name="ZV_C_EXCEPTIONDeactivate" ReturnType="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" EntitySet="ZV_C_EXCEPTION"
+					m:HttpMethod="POST" sap:action-for="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType" sap:applicable-path="Deactivate_ac"><Parameter Name="exceprion_code" Type="Edm.String" Mode="In" MaxLength="20"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/exceprion_code"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/zzernam"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="User Details"/><PropertyValue Property="CollectionPath" String="ZV_B_USER_DTLS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="zzernam"/><PropertyValue Property="ValueListProperty" String="bname"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ename"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZV_C_EXCEPTION_CDS.ZV_C_EXCEPTIONType/zzaenam"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="User Details"/><PropertyValue Property="CollectionPath" String="ZV_B_USER_DTLS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="zzaenam"/><PropertyValue Property="ValueListProperty" String="bname"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ename"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZV_C_EXCEPTION_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZV_C_EXCEPTION_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
